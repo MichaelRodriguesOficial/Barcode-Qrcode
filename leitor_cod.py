@@ -19,7 +19,7 @@ sort_order = True  # Classificação ascendente como padrão
 # Variável global para a janela principal
 root = None
 
-def center_window(root, width, height):
+def adjust_window_size(root, width, height):
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
     x_coordinate = (screen_width - width) // 2
@@ -46,7 +46,7 @@ def show_message(message, code_type):
     width = max(label_header.winfo_reqwidth(), label_message.winfo_reqwidth()) + 20
     height = label_header.winfo_reqheight() + label_message.winfo_reqheight() + 20
 
-    center_window(msg_root, width, height)
+    adjust_window_size(msg_root, width, height)
 
     msg_root.after(3000, msg_root.destroy) 
     msg_root.mainloop()
@@ -127,19 +127,23 @@ def export_codes():
                 writer.writerow(item)  # Escreve cada linha com os dados dos códigos capturados
 
 
+# Tamanho mínimo da janela
+MIN_WINDOW_WIDTH = 400
+MIN_WINDOW_HEIGHT = 300
+
 def main():
     # Define colors and fonts
     BACKGROUND_COLOR = "#f0f0f0"
     FONT_FAMILY = "Segoe UI"
     BUTTON_FONT = (FONT_FAMILY, 12, "bold")
-    HEADING_FONT = (FONT_FAMILY, 11, "bold")
-    DATA_FONT = (FONT_FAMILY, 11)
 
     global root
     root = tk.Tk()
     root.title("CAV - Leitor de Código")  # Changed title to "Leitor de Código" (Code Reader)
-    root.geometry("400x300")
     root.configure(bg=BACKGROUND_COLOR)
+
+    # Remove o botão de maximizar
+    #root.resizable(False, False)
 
     # Define o ícone
     root.iconbitmap("favicon.ico")
@@ -178,9 +182,13 @@ def main():
     message_label = tk.Label(root, text="Para copiar um código, basta clicar duas vezes em cima dele", font=BUTTON_FONT)
     message_label.pack(pady=5)
 
+    # Botões em um frame separado
+    button_frame = tk.Frame(root, bg=BACKGROUND_COLOR)
+    button_frame.pack(fill="x", padx=10, pady=10)
+
     # Capture button
     capture_button = tk.Button(
-        root,
+        button_frame,
         text="Capturar",
         command=capture_code,
         font=BUTTON_FONT,
@@ -188,23 +196,11 @@ def main():
         bg="#4CAF50",  # Green button
         fg="#fff",  # White text
     )
-    capture_button.pack(side="left", padx=10, pady=10)
-
-    # Export button
-    export_button = tk.Button(
-        root,
-        text="Exportar Códigos",
-        command=export_codes,
-        font=BUTTON_FONT,
-        width=15,
-        bg="#007bff",  # Blue button
-        fg="#fff",  # White text
-    )
-    export_button.pack(side="left", padx=10, pady=10)
+    capture_button.pack(side="left")
 
     # Exit button
     exit_button = tk.Button(
-        root,
+        button_frame,
         text="Sair",
         command=exit_application,
         font=BUTTON_FONT,
@@ -212,21 +208,37 @@ def main():
         bg="#f44336",  # Red button
         fg="#fff",  # White text
     )
-    exit_button.pack(side="right", padx=10, pady=10)
+    exit_button.pack(side="right")
 
-    center_window(root, 500, 400)
+    # Export button - centralizado
+    export_button = tk.Button(
+        button_frame,
+        text="Exportar Códigos",
+        command=export_codes,
+        font=BUTTON_FONT,
+        width=15,
+        bg="#007bff",  # Blue button
+        fg="#fff",  # White text
+    )
+    export_button.pack(side="left", expand=True)
+
+    adjust_window_size(root, MIN_WINDOW_WIDTH, MIN_WINDOW_HEIGHT)
 
     root.mainloop()
 
-
-# Function for centering the window (optional)
-def center_window(root, width, height):
+# Function for centering and adjusting the window size based on screen resolution and DPI
+def adjust_window_size(root, min_width, min_height):
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
-    x = int((screen_width / 2) - (width / 2))
-    y = int((screen_height / 2) - (height / 2))
-    root.geometry(f"{width}x{height}+{x}+{y}")
 
+    # Calcula o tamanho ideal da janela baseado na resolução da tela, com um mínimo garantido
+    width = max(min_width, int(screen_width * 0.5))
+    height = max(min_height, int(screen_height * 0.5))
+
+    x = (screen_width - width) // 2
+    y = (screen_height - height) // 2
+
+    root.geometry(f"{width}x{height}+{x}+{y}")
 
 if __name__ == "__main__":
     main()
