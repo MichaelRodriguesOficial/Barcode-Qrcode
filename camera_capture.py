@@ -88,9 +88,11 @@ def open_camera(root, update_history, update_treeview, show_message):
     camera_window.title("CAV - Captura")
     
     # Define o ícone da janela
-    favicon_filename = "favicon.ico"
-    root_path = os.path.dirname(__file__)
-    camera_window.iconbitmap(os.path.join(root_path, favicon_filename))
+    #favicon_filename = "favicon.ico"
+    #root_path = os.path.dirname(__file__)
+    #camera_window.iconbitmap(os.path.join(root_path, favicon_filename))
+    # Define o ícone
+    camera_window.iconbitmap("favicon.ico")
 
     # Desabilita o botão de maximizar
     camera_window.resizable(False, False)

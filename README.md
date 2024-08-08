@@ -40,7 +40,7 @@ Instale o PyInstaller:
 pip install pyinstaller
 ```
 ```bash
-pyinstaller --noconfirm --onefile --windowed --icon "C:/caminho/do_seu/favicon.ico" --add-data "C:/caminho/do_seu/Python/Python311/Lib/site-packages/pyzbar/libiconv.dll;." --add-data "C:/caminho/do_seu/Python/Python311/Lib/site-packages/pyzbar/libzbar-64.dll;." "C:/caminho/do_seu/leitor_cod.py"
+pyinstaller --noconfirm --onefile --windowed --icon "C:/caminho/do_seu/favicon.ico" --add-data "C:/caminho/do_seu/Python/Python311/Lib/site-packages/pyzbar/libiconv.dll;." --add-data "C:/caminho/do_seu/Python/Python311/Lib/site-packages/pyzbar/libzbar-64.dll;." "C:/caminho/do_seu/frontend.py"
 ```
 
 ## Observações

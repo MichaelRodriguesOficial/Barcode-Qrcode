@@ -103,9 +103,11 @@ def main():
     root.configure(bg="#f0f0f0")
 
     # Define o ícone
-    favicon_filename = "favicon.ico"
-    root_path = os.path.dirname(__file__)
-    root.iconbitmap(os.path.join(root_path, favicon_filename))
+    #favicon_filename = "favicon.ico"
+    #root_path = os.path.dirname(__file__)
+    #root.iconbitmap(os.path.join(root_path, favicon_filename))
+    # Define o ícone
+    root.iconbitmap("favicon.ico")
 
     style = ttk.Style()
     style.theme_use("clam")
