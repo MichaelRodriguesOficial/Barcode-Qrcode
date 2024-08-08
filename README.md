@@ -1,6 +1,6 @@
 # Barcode-Qrcode
 
-Este é um aplicativo simples para capturar e decodificar códigos de barras e QR codes a partir da tela do seu computador.
+Este é um aplicativo simples para capturar e decodificar códigos de barras e QR codes a partir da tela do seu computador e câmera instalada.
 
 ## Requisitos
 
@@ -13,6 +13,9 @@ Este é um aplicativo simples para capturar e decodificar códigos de barras e Q
     * tkinter
     * pillow
 
+```bash
+pip install opencv-python pyautogui pyzbar pyperclip pillow
+```
 ## Como usar
 
 1. Certifique-se de ter instalado todos os requisitos listados acima.
@@ -31,6 +34,15 @@ Este é um aplicativo simples para capturar e decodificar códigos de barras e Q
 * **Câmera**: Abre a câmera do dispositivo para captura e decodificação de códigos.
 * **Exportar**: Permite exportar os códigos capturados para um arquivo CSV.
 * **Sair**: Fecha o aplicativo.
+
+## Imagens do aplicativo
+
+![Programa](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Programa.png)
+![Captura de QRcode](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Export.png)
+![Captura do Cod_barras](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Export.png)
+![Leitor de QRcode](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Export.png)
+![Export](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Export.png)
+![csv](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/csv.png)
 
 ## Transformando o código em .exe com o PyInstaller
 
