@@ -38,9 +38,9 @@ pip install opencv-python pyautogui pyzbar pyperclip pillow
 ## Imagens do aplicativo
 
 ![Programa](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Programa.png)
-![Captura de QRcode](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Export.png)
-![Captura do Cod_barras](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Export.png)
-![Leitor de QRcode](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Export.png)
+![Captura de QRcode](https://github.com/MichaelRodriguesOficial/Barcode-Qrcode/blob/main/img/Captura%20de%20QRcode.png)
+![Captura do Cod_barras](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Captura%20do%20Cod_barras.png)
+![Leitor de QRcode](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Leitor%20de%20QRcode.png)
 ![Export](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/Export.png)
 ![csv](https://raw.githubusercontent.com/MichaelRodriguesOficial/Barcode-Qrcode/main/img/csv.png)
 
